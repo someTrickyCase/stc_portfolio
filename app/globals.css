@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin-left {
+    to {
+        transform: rotate(-359deg);
+    }
+}
+
+:root {
+    --brown: #493619;
+    --white-font: #aaaaaa;
+    --black-font: #08090a;
+}
+
+body {
+    background: var(--black-font);
+    color: var(--brown);
+}
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    color: var(--brown);
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+    color: var(--white-font);
+}
+
+#scene {
+    @apply absolute;
+}
+
+.fullscreen {
+    @apply relative h-screen w-screen overflow-hidden;
+}
+
+.center-all {
+    @apply items-center justify-center flex;
+}
+
+.headed-font {
+    @apply roboto text-[76px] font-bold tracking-wide sm:text-[120px] md:text-[136px] md:font-extrabold lg:text-[164px] xl:text-[180px];
+}
+
+.hide {
+    @apply opacity-0 -z-50;
+}
+
+.indicator-line {
+    @apply h-1 w-[2px] rounded-full bg-[var(--brown)] transition-all duration-200 ease-in-out;
+}
+
+.indicator-line.active {
+    animation: indicator-line 0.5s ease infinite;
+    animation-delay: calc(var(--animation-order) * 0.1s);
+}
+
+@keyframes indicator-line {
+    0% {
+        height: 4px;
+        transform: translateY(-0px);
+    }
+    50% {
+        height: 16px;
+        transform: translateY(-4px);
+    }
+    100% {
+        height: 4px;
+        transform: translateY(-0px);
+    }
+}
