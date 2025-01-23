@@ -42,4 +42,5 @@ yarn-error.log*
 next-env.d.ts
 
 # gltf scene
-public/assets/models/scene.gltf
+public/assets/models/scene.glb
+

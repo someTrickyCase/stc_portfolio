@@ -75,13 +75,13 @@ export default function MainScene() {
 
         // gltf loader
         const gltfLoader = new GLTFLoader();
-        gltfLoader.load("/assets/models/scene.gltf", (gltf) => {
-            const sphere = gltf.scene.getObjectByName("Sphere") as Object3D<Object3DEventMap>;
+        gltfLoader.load("/assets/models/scene.glb", (gltf) => {
+            const sphere = gltf.scene.children[1] as Object3D<Object3DEventMap>;
             SPHERE = sphere;
             SPHERE.scale.set(10, 10, 10);
             SPHERE.position.set(0, 0, 0);
 
-            const rings = gltf.scene.getObjectByName("Torus") as Object3D<Object3DEventMap>;
+            const rings = gltf.scene.children[0] as Object3D<Object3DEventMap>;
             RINGS = rings;
             RINGS.scale.set(30, 30, 30);
             RINGS.position.set(0, 0, 0);
@@ -103,7 +103,7 @@ export default function MainScene() {
         scene.add(plane);
 
         // ambient light
-        const ambientLight = new AmbientLight(0xabc8ca, 0.02);
+        const ambientLight = new AmbientLight(0xabc8ca, 0.01);
         scene.add(ambientLight);
 
         // spotlight
