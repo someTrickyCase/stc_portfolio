@@ -1,4 +1,4 @@
-This is [my personal developer portfolio](https://stc_portfolio.netlify.app).
+This is [my personal developer portfolio](https://stc-portfolio.netlify.app).
 
 ## Getting Started
 
